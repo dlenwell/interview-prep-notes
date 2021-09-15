@@ -18,6 +18,3 @@ goes to 11) concepts that will come up in these types of interviews, they are;
 - Heaps
 - Dynamic Programming
 - Quick Sort
-
-Since I am mostly a python developer most of the example code within is python
-but that .
