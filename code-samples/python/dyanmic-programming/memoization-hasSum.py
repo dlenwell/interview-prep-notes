@@ -15,10 +15,21 @@
 
     hasSumRec(7, [5, 3, 4, 7]) -> [7]
 
+    hasSumRec(7, [5, 3, 4, 7]) -> [3, 4]
+
+    hasSumRec(8, [2, 3, 4, 7]) -> [2, 2, 2, 2]
+
     hasSumRec(7, [5, 6]) -> None
 
     hasSumRec(0, [1, 2, 3]) -> []
 
+    Complexity:
+
+    recursive time: 0(n^m * m)
+    recursive space: 0(m)
+
+    memoized time: 0(n*m^2)
+    space: 0(m^2)
 
 
 """
@@ -30,13 +41,47 @@ def hasSumRec(target, numbers):
     """
         recursive version of the call
     """
-    
+    if target == 0:
+        return([])
+    if target < 0:
+        return(None)
+    if target in numbers:
+        return([target])
+
+    for number in numbers:
+        remainder = target - number
+        result = hasSumRec(remainder, numbers)
+
+        if result is not None:
+            result.append(number)
+            return(result)
+
+    return(None)
 
 
 def hasSumMemo(target, numbers, memo = {}):
     """
         memoized version of the function
     """
+    if target in memo.keys():
+        return(memo[target])
+    if target == 0:
+        return([])
+    if target < 0:
+        return(None)
+    if target in numbers:
+        return([target])
+
+    for number in numbers:
+        remainder = target - number
+        memo[target] = hasSumMemo(remainder, numbers, memo)
+
+        if memo[target] is not None:
+            memo[target].append(number)
+            return(memo[target])
+
+    memo[target] = None
+    return(None)
 
 
 def race(target, numbers):
@@ -51,10 +96,8 @@ def main():
     """
 
     print("hi running canSum")
-
-    print("hasSumRec(7, [5, 3, 4, 7]) -> {}".format(hasSumRec(7, [5, 3, 4, 7])))
+    print("hasSumMemo(300, [7, 14]) -> {}".format(hasSumMemo(300, [7, 14])))
     #print("canSum(300, [7, 14]) -> {}".format(canSumMemo(300, [7, 14])))
-
 
     #race(300, [7, 14])
 

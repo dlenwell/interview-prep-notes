@@ -62,6 +62,8 @@ def gridTravelerMemo(height, width, memo = {}):
     key = "{},{}".format(height, width)
     reverse_key = "{},{}".format(width, height)
 
+    # because the reverse of the inputs does not effect the results its okay
+    # to use the reverse of the key as well.
     if key in memo.keys():
         return(memo[key])
     if reverse_key in memo.keys():

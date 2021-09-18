@@ -19,20 +19,18 @@ This shifts back into memoizations favor once you try to calculate more than
 my tests of testing n=50 resulted in around 7.8 seconds for the memoization
 version and over an hour to do recursively on a pretty fast computer.
 
-
-
 """
 import time
 import sys
 
 def fib_recursive(n):
     """
-    This is a purely recursive version of the function.
+        This is a purely recursive version of the function.
 
-    Because its not caching the calculations its doing on each branch of the
-    sequence it is doomed to repeat itself and has to painstakingly traverse the
-    entire tree of values which if you are trying to find the 50th integer in
-    the sequence will take over a quadrillian iterations.
+        Because its not caching the calculations its doing on each branch of the
+        sequence it is doomed to repeat itself and has to painstakingly traverse
+        the entire tree of values which if you are trying to find the 50th
+        integer in the sequence will take over a quadrillian iterations.
     """
     if n <= 2:
         return 1
@@ -43,11 +41,12 @@ def fib_recursive(n):
 
 def fib(n, memo = {}):
     """
-    This is the memoized version of the function.
+        This is the memoized version of the function.
 
-    It takes advantage of a hash table that is shared with each recursion that
-    holds cached results from any depth first traversal of the tree and as such
-    saves itself from falling into the traps of exponential number traps.
+        It takes advantage of a hash table that is shared with each recursion
+        that holds cached results from any depth first traversal of the tree and
+        as such saves itself from falling into the traps of exponential number
+        traps.
     """
     if n in memo.keys():
         return memo[n]
@@ -60,7 +59,7 @@ def fib(n, memo = {}):
     return(memo[n])
 
 
-def compare_fibs(n):
+def race(n):
     """
         This runs the memoization version of the fib function against the
         recursive version and outputs the time it takes to calculate each one
@@ -77,16 +76,21 @@ def compare_fibs(n):
 
     """
     print("running fib with argument {} with memoization...".format(n))
+
     start_ = time.time()
     print("fib({}) -> {}".format(n,fib(n)))
     end_ = time.time()
     print("run time: {}".format(end_ - start_))
+
     print()
     print()
+
     print("running fib with argument {} recursively...".format(n))
+
     start = time.time()
     print("fib_recursive({}) -> {}".format(n,fib_recursive(n)))
     end = time.time()
+
     print("run time: {}".format(end - start))
     print()
     print()
@@ -94,7 +98,7 @@ def compare_fibs(n):
 
 def main():
     """
-    main program
+        main program
     """
     default_fib_depth = 10
 
@@ -103,7 +107,7 @@ def main():
     else:
         depth = int(sys.argv[1])
 
-    compare_fibs(depth)
+    race(depth)
 
 
 if __name__ == "__main__":
