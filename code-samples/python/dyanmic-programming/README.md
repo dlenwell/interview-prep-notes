@@ -22,8 +22,10 @@ Stick to two high level steps.
   - store return values in the memo object
 
 #### Examples:
-- Value Fibonacci Sequence Index
-- Grid Traveller
+- Fibonacci Index
+- Grid traveler
 - canSum
+- hasSum
+- bestSum
 
 ## Tabulation
