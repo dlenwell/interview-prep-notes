@@ -86,7 +86,10 @@ class Node():
         Returns list of strings, width, height, and horizontal coordinate of
         the root.
 
-
+        Because it has to display the entire tree this method requires
+        that you fully traverse the tree. This is not the most efficient way
+        to search the tree.. but nescesarry if you want to see the entire tree
+        with the search result highlighted it.
         """
 
         if highlight is not None and str(self.value) == str(highlight):
@@ -96,7 +99,7 @@ class Node():
 
         value_len = len(str(self.value))
 
-        # No child
+        # No child 
         if self.right is None and self.left is None:
             line = value
             width = value_len
@@ -105,7 +108,7 @@ class Node():
 
             return([line], width, height, middle)
 
-        # Only left child
+        # Only left
         if self.right is None:
             lines, width, height, middle = self.left._print_aux(highlight)
 
@@ -119,12 +122,12 @@ class Node():
 
             return(
                 [first_line, second_line] + shifted_lines, # next set of lines
-                width + value_len, # new n
-                height + 2, #  new height
-                width + value_len // 2 # new middle
+                width + value_len,
+                height + 2,
+                width + value_len // 2
             )
 
-        # Only right child
+        # Only right
         if self.left is None:
             lines, width, height, middle = self.right._print_aux(highlight)
 
@@ -142,7 +145,7 @@ class Node():
                 value_len // 2
             )
 
-        # both children
+        # both
         left, l_width, l_height, l_middle = self.left._print_aux(highlight)
         right, r_width, r_height, r_middle = self.right._print_aux(highlight)
 
@@ -171,10 +174,17 @@ class Node():
 
 class Tree():
     """
+        Tree class
+
+        root object for the node object above.
+
     """
 
     def __init__(self, node = None):
         """
+            init method
+
+            optionally pass in a node to become the root node.
         """
         self.root = node
 
@@ -186,6 +196,9 @@ class Tree():
 
     def return_node_with_value(self, value, current = None):
         """
+            BTS search method that returns the node and its chidlren if it finds
+            a match.
+
         """
         if current is None:
             current = self.root
@@ -205,6 +218,8 @@ class Tree():
 
     def has_node_with_value(self, value, current = None):
         """
+            BTS search method that returns a boolean if the value is in the tree
+
         """
         if current is None:
             current = self.root
@@ -367,7 +382,6 @@ def main():
     tree.print(highlight)
 
     print(tree.has_node_with_value(highlight))
-
 
     new_tree = Tree(tree.return_node_with_value(highlight))
 
