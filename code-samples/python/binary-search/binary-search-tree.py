@@ -99,7 +99,7 @@ class Node():
 
         value_len = len(str(self.value))
 
-        # No child 
+        # No child
         if self.right is None and self.left is None:
             line = value
             width = value_len
@@ -289,8 +289,10 @@ class Tree():
         not yet implemented
         """
 
+
     def add_node_count(self):
         self.node_count = self.node_count + 1
+
 
     def add(self, value, current = None):
         """
