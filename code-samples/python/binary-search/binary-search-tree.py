@@ -114,10 +114,8 @@ class Node():
 
             first_line = \
                 (middle + 1) * ' ' + (width - middle - 1) * '_' + value
-
             second_line = \
                 middle * ' ' + '/' + (width - middle - 1 + value_len) * ' '
-
             shifted_lines = [line + value_len * ' ' for line in lines]
 
             return(
@@ -132,10 +130,8 @@ class Node():
             lines, width, height, middle = self.right._print_aux(highlight)
 
             first_line = value + middle * '_' + (width - middle) * ' '
-
             second_line = \
                 (value_len + middle) * ' ' + '\\' + (width - middle - 1) * ' '
-
             shifted_lines = [value_len * ' ' + line for line in lines]
 
             return(
@@ -151,7 +147,6 @@ class Node():
 
         first_line = (l_middle + 1) * ' ' + (l_width - l_middle - 1) * '_' + \
             value + r_middle * '_' + (r_width - r_middle) * ' '
-
         second_line = l_middle * ' ' + '/' + (l_width - l_middle - 1 + \
             value_len + r_middle) * ' ' + '\\' + (r_width - r_middle - 1) * ' '
 
@@ -174,17 +169,16 @@ class Node():
 
 class Tree():
     """
-        Tree class
+    Tree class
 
-        root object for the node object above.
-
+    root object for the node object above.
     """
 
     def __init__(self, node = None):
         """
-            init method
+        init method
 
-            optionally pass in a node to become the root node.
+        optionally pass in a node to become the root node.
         """
         self.root = node
 
@@ -196,9 +190,8 @@ class Tree():
 
     def return_node_with_value(self, value, current = None):
         """
-            BTS search method that returns the node and its chidlren if it finds
-            a match.
-
+        BTS search method that returns the node and its chidlren if it finds
+        a match.
         """
         if current is None:
             current = self.root
@@ -218,8 +211,7 @@ class Tree():
 
     def has_node_with_value(self, value, current = None):
         """
-            BTS search method that returns a boolean if the value is in the tree
-
+        BTS search method that returns a boolean if the value is in the tree
         """
         if current is None:
             current = self.root
@@ -246,7 +238,6 @@ class Tree():
     def pre_order_traverse(self, current):
         """
         depth first search of this tree
-
 
         pre-order
         """
@@ -298,7 +289,7 @@ class Tree():
         """
         add
 
-        add
+        recursive add function
         """
         if self.root is None:
             self.root = Node(value)
@@ -359,7 +350,8 @@ class Tree():
 
 
 def main():
-    """main exercise run through...
+    """
+    main exercise run through...
     """
     import random
 
@@ -374,8 +366,6 @@ def main():
     # add 100 random values to the tree
     for i in range(100):
         value = random.randint(1,999)
-        #if i == 12:
-        #    highlight = value
         unsorted_node_values.append(value)
         tree.add(value)
 
