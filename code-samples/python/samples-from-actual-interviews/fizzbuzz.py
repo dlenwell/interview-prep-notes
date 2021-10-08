@@ -1,13 +1,14 @@
 """
+Task:
 
-write a program prints all numbers that are multiples of 3 with the word fizz
+Write a program prints all numbers that are multiples of 3 with the word fizz
 and all numbers that are multiples of 5 with the word buzz if the number is both
 is prints fizzbuzz
 
 
 """
 
-def main():
+def fizzbuzz():
     for number in range(1,101):
         line_output = ""
 
@@ -22,4 +23,4 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    fizzbuzz()
