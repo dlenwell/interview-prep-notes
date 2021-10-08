@@ -87,7 +87,6 @@ class LinkedList():
             if not node.next:
                  end = "-> None"
             output = "{}{}{}".format(output, node.data, end)
-
             node = node.next
 
         return(output)
@@ -110,10 +109,37 @@ class LinkedList():
             if node.next:
                  end = "-> "
             print(node.data, end = end)
-
             node = node.next
 
         print('')
+
+
+    def sort(self):
+        """this is base sorting method.
+
+        it essentially dumps the list into a python list object uses the built
+        in method to sort the array in numerical order which is log ^n all by
+        it self and then iterates it again to resets the pointers and the data
+        it as a linked list.
+
+        the built in python sort basically is a merge sort (or tims sort)
+        which I have an example of in the mergesort example file.
+        """
+        values = []
+
+        node = self.head
+        while node:
+            values.append(node.data)
+            node = node.next
+
+        values = collections.deque(values.sort())
+
+        node = self.head
+        while node:
+            node.data = values.popleft()
+            node = node.next
+
+        self.sorted = True
 
 
     def insert(self, new):
