@@ -6,10 +6,11 @@ interviews.
 ###Example ([code](invert.py)):
 
 This example includes two methods for inverting trees. One Recursive and one
-is iterative. 
+is iterative.
 
 Before:
 
+```
      ____346______________________
     /                             \
   _181_          ________________973
@@ -23,9 +24,9 @@ Before:
                        _764_
                       /     \
                      759   818
-
+```
 After:
-
+```
   ______________________346____
  /                             \
 973________________          _181_
@@ -39,3 +40,4 @@ After:
         _764_
        /     \
       818   759
+```
