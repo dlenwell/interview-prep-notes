@@ -1,57 +1,6 @@
 """
 Tree inversion:
 
-Inverting a binary tree is a common programming task in tech screening
-interviews.
-
-Example output:
-generating tree with 100 nodes with random values between 1 and 999
-
-     ____346______________________
-    /                             \
-  _181_          ________________973
- /     \        /
-138   335     _576_
-             /     \
-            502   599__________
-                               \
-                          ____843
-                         /
-                       _764_
-                      /     \
-                     759   818
-
-Inverting tree with recursion:
-
-  ______________________346____
- /                             \
-973________________          _181_
-                   \        /     \
-                 _576_     335   138
-                /     \
-     __________599   502
-    /
-   843____
-          \
-        _764_
-       /     \
-      818   759
-
-Inverting tree with iterative style:
-
-     ____346______________________
-    /                             \
-  _181_          ________________973
- /     \        /
-138   335     _576_
-             /     \
-            502   599__________
-                               \
-                          ____843
-                         /
-                       _764_
-                      /     \
-                     759   818
 
 """
 from tree import Node, Tree
