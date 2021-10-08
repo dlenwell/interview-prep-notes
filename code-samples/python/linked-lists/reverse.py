@@ -1,4 +1,7 @@
 """
+Here are a couple of reversal methods.
+
+One is recursive, one iterative. 
 
 
 """
