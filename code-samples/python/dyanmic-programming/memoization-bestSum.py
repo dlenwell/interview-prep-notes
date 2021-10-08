@@ -130,12 +130,8 @@ def race(target, numbers):
     print()
 
 
-def main():
+if __name__ == "__main__":
     """
-        main program
+        triggers race when running from command line
     """
     race(100, [25, 3, 12, 4])
-
-
-if __name__ == "__main__":
-    main()
