@@ -1,10 +1,11 @@
 """
-binary search Index of in sorted list
+Binary search index of in sorted list
 
-mission:
+Mission:
 
-Implement both an iterative and recursive version of an indexOf function that returns the index of a given value in a
-sorted list.
+Implement both an iterative and recursive version of an indexOf function that
+returns the index of a given value in a sorted list.
+
 
 
 
