@@ -9,7 +9,7 @@ import collections
 class Node():
     """
     """
-    def __init__(self, data, next = None):
+    def __init__(self, data = None, next = None):
         self.data = data
         self.next = next
 
@@ -135,6 +135,141 @@ class LinkedList():
             current = next
 
         self.head = last
+
+
+    """
+    Quick sort
+    """
+    def quick_sort_aux(self, sequence):
+        """
+        this is a classic quicksort method that uses recursion
+
+        basically it uses the last number in the sequence as a "pivot" and sorts
+        items that are less than the pivot in one group and more in another.
+
+        then concats sub calls of the two sides together. in the end you end up
+        with a sorted list.
+
+        
+
+        """
+        if len(sequence) <= 1:
+            return(sequence)
+        else:
+            pivot = sequence.pop()
+
+        lesser = []
+        greater = []
+
+        for item in sequence:
+            if item > pivot:
+                greater.append(item)
+            else:
+                lesser.append(item)
+
+        return(self.quick_sort_aux(lesser) +
+               [pivot] +
+               self.quick_sort_aux(greater))
+
+
+    def quick_sort(self):
+        """
+
+        """
+        sequence = []
+        node = self.head
+
+        # convert linked list to a python list
+        while node:
+            sequence.append(node.data)
+            node = node.next
+
+        #
+        sequence = collections.deque(self.quick_sort_aux(sequence))
+
+        node = self.head
+
+        while node:
+            node.data = sequence.popleft()
+            node = node.next
+
+        self.sorted = True
+
+
+    """
+    Merge Sort o(n * log n)
+
+    uses 4 funcitons:
+
+    merge_sort  <- initial call kicks off the sort with the objects head
+    merge_sort_aux <- recursive function that splits > sorts > merges
+    middle <- helper function to find the middle of the list
+    merge <- helper function to merge two lists in order
+    """
+    def middle(self, head):
+        """
+        find the middle
+        """
+        slow, fast = head, head.next
+
+        while fast and fast.next:
+            slow = slow.next
+            fast = fast.next.next
+
+        return(slow)
+
+
+    def merge(self, left, right):
+        """
+        merge two lists and keep order
+        """
+        tail = dummy = Node()
+
+        while left and right:
+            if left.data < right.data:
+                tail.next = left
+                left = left.next
+            else:
+                tail.next = right
+                right = right.next
+
+            tail = tail.next
+
+            if left is not None:
+                tail.next = left
+            elif right is not None:
+                tail.next = right
+
+        return dummy.next
+
+
+    def merge_sort_aux(self, head: Node) -> Node:
+        """
+        merge sort method with strict typing
+
+        """
+        if not head or not head.next:
+            return(head)
+
+        # split it
+        left = head
+        right = self.middle(head)
+        temp = right.next
+        right.next = None
+        right = temp
+
+        left = self.merge_sort_aux(left)
+        right = self.merge_sort_aux(right)
+
+        return(self.merge(left, right))
+
+
+    def merge_sort(self):
+        """
+        starter call for merge sort to make it use the self.head variable to
+        start a sort.
+        """
+        self.head = self.merge_sort_aux(self.head)
 
 
     def bubble_sort(self):
@@ -273,9 +408,11 @@ def main():
     """
     print()
     print('Generating a new unsorted list with 900 random numbers...')
-    list = generate_list(900)
+    list = generate_list(100)
     LinkedList1 = LinkedList(list)
     LinkedList2 = LinkedList(list)
+    LinkedList3 = LinkedList(list)
+    LinkedList4 = LinkedList(list)
     print()
     print("__________________________________________")
     print()
@@ -295,6 +432,25 @@ def main():
     end = time.time()
     print("run time: {}".format(end - start))
     print()
+    # bubble sort
+    print("sorting via merge sort:")
+    start = time.time()
+    #LinkedList3.print()
+    LinkedList3.merge_sort()
+    #LinkedList3.print()
+    end = time.time()
+    print("run time: {}".format(end - start))
+    print()
+
+    print("sorting via quick sort:")
+    start = time.time()
+    LinkedList4.print()
+    LinkedList4.quick_sort()
+    LinkedList4.print()
+    end = time.time()
+    print("run time: {}".format(end - start))
+    print()
+
     print("__________________________________________")
     print()
     print("Racing reverse methods...")
