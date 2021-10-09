@@ -10,14 +10,9 @@ sorts items that are less than the pivot in one group and more in another.
 Then concats sub calls of the two sides together. in the end you end up
 with a sorted list.
 
-####input:
-```
-.---.---.---.---.
-| 4 | 1 | 3 | 2 |
-'---'---'---'---'
-```
-
 ####Basic Flow:
+Here is an example of sorting a 4 member length so that you can see it all
+happen.
 
 ```
           .---.---.---.---.
