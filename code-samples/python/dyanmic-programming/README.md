@@ -27,5 +27,3 @@ Stick to two high level steps.
 - canSum
 - hasSum
 - bestSum
-
-## Tabulation
