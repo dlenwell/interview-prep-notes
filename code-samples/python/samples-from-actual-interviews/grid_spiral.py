@@ -1,8 +1,9 @@
 """
-Grid Spiral question.
+Grid Spiral Question.
 
-write a function that will traverse the grid in a spiral path starting at the
-top left and moving right till the edge.
+Write a function that will traverse the grid in a spiral path starting at the
+top left and moving right till the it visits every node ending in about the
+center.
 """
 import unittest
 
@@ -102,6 +103,7 @@ def spiral(grid):
     # start it off at (0, 0)
     position = (0, 0)
 
+    # iterate
     while len(visited) < size:
         # visit
         if str(position) not in visited.keys():
