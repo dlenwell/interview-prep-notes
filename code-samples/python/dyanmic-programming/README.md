@@ -22,8 +22,9 @@ Stick to two high level steps.
   - store return values in the memo object
 
 #### Examples:
-- Fibonacci Index
-- Grid traveler
-- canSum
-- hasSum
-- bestSum
+- [fibonacci](memoization-fib.py)
+- [grid traveler](memoization-grid-traveler.py)
+- [can sum](memoization-canSum.py)
+- [has sum](memoization-hasSum.py)
+- [best sum](memoization-bestSum.py)
+- [can construct](memoization-grid-traveler.py)
