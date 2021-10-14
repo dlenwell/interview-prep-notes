@@ -22,7 +22,7 @@ Stick to two high level steps.
   - store return values in the memo object
 
 #### Examples:
-- [fibonacci](memoization-fib.py)
+- [fibonacci](memoization_fib.py)
 - [grid traveler](memoization-grid-traveler.py)
 - [can sum](memoization-canSum.py)
 - [has sum](memoization-hasSum.py)
