@@ -71,7 +71,6 @@ def race(target, numbers):
     print("running can_sum_memo with target:{} numbers:{}"
           .format(target, numbers))
 
-    # with memoization
     start = time.time()
     print(
         "can_sum_memo({}, {}) -> {}".format(
@@ -106,7 +105,7 @@ def race(target, numbers):
 
 if __name__ == "__main__":
     """
-    main program
+    test code when triggered from the command line.
     """
     numbers = [7, 14]
     target = 250
