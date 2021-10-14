@@ -26,5 +26,5 @@ Stick to two high level steps.
 - [grid traveler](memoization-grid-traveler.py)
 - [can sum](memoization-canSum.py)
 - [has sum](memoization-hasSum.py)
-- [best sum](memoization-bestSum.py)
+- [best sum](memoization_best_sum.py)
 - [can construct](memoization-grid-traveler.py)
