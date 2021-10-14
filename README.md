@@ -13,7 +13,7 @@ goes to 11) concepts that will come up in these types of interviews, they are;
 - [Sliding Window](code-samples/python/sliding_window)
 - [Recursion](code-samples/python/recursion)
 - [Inverting Trees](code-samples/python/inverting_trees)
-- [Linked Lists](code-samples/python/linked-lists)
+- [Linked Lists](code-samples/python/linked_lists)
 - [Suffix Trees](code-samples/python/suffix_trees)
 - [Heaps](code-samples/python/heaps/)
 - [Dynamic Programming](code-samples/python/dyanmic_programming)
