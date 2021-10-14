@@ -25,6 +25,6 @@ Stick to two high level steps.
 - [fibonacci](memoization_fib.py)
 - [grid traveler](memoization_grid_traveler.py)
 - [can sum](memoization-canSum.py)
-- [has sum](memoization-hasSum.py)
+- [has sum](memoization_has_sum.py)
 - [best sum](memoization_best_sum.py)
 - [can construct](memoization-grid-traveler.py)
