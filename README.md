@@ -9,7 +9,7 @@ goes to 11) concepts that will come up in these types of interviews, they are;
 
 - [Binary Search](code-samples/python/binary_search)
 - [Logarithms](code-samples/python/logarithms)
-- [Graph Traversal](code-samples/python/graph-traversal)
+- [Graph Traversal](code-samples/python/graph_traversal)
 - [Sliding Window](code-samples/python/sliding_window)
 - [Recursion](code-samples/python/recursion)
 - [Inverting Trees](code-samples/python/inverting-trees)
