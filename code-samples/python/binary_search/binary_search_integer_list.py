@@ -6,10 +6,6 @@ Mission:
 Implement both an iterative and recursive version of an indexOf function that
 returns the index of a given value in a sorted list.
 
-
-
-
-
 """
 import time
 import sys
@@ -109,14 +105,9 @@ def race(haystack, needle):
     print()
     print()
 
-
-def main():
+if __name__ == "__main__":
     """
     do the things
 
     """
     race(HAYSTACK, NEEDLE)
-
-
-if __name__ == "__main__":
-    main()
