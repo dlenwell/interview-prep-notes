@@ -12,7 +12,7 @@ goes to 11) concepts that will come up in these types of interviews, they are;
 - [Graph Traversal](code-samples/python/graph_traversal)
 - [Sliding Window](code-samples/python/sliding_window)
 - [Recursion](code-samples/python/recursion)
-- [Inverting Trees](code-samples/python/inverting-trees)
+- [Inverting Trees](code-samples/python/inverting_trees)
 - [Linked Lists](code-samples/python/linked-lists)
 - [Suffix Trees](code-samples/python/suffix_trees)
 - [Heaps](code-samples/python/heaps/)
