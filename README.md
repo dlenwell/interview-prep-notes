@@ -17,7 +17,7 @@ goes to 11) concepts that will come up in these types of interviews, they are;
 - [Suffix Trees](code-samples/python/suffix-trees)
 - [Heaps](code-samples/python/heaps/)
 - [Dynamic Programming](code-samples/python/dyanmic_programming)
-- [Quick Sort](code-samples/python/quick-sort)
+- [Quick Sort](code-samples/python/quick_sort)
 
 I've also included a directory
 ([here](code-samples/python/samples-from-actual-interviews)) of code snippets from actual coding interviews.
