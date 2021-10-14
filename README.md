@@ -14,7 +14,7 @@ goes to 11) concepts that will come up in these types of interviews, they are;
 - [Recursion](code-samples/python/recursion)
 - [Inverting Trees](code-samples/python/inverting-trees)
 - [Linked Lists](code-samples/python/linked-lists)
-- [Suffix Trees](code-samples/python/suffix-trees)
+- [Suffix Trees](code-samples/python/suffix_trees)
 - [Heaps](code-samples/python/heaps/)
 - [Dynamic Programming](code-samples/python/dyanmic_programming)
 - [Quick Sort](code-samples/python/quick_sort)
