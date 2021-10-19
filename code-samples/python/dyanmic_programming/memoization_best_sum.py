@@ -76,10 +76,10 @@ def best_sum_memo(target, numbers, memo={}):
 
     for number in numbers:
         remainder = target - number
-        memo[target] = best_sum_memo(remainder, numbers, memo)
+        result = best_sum_memo(remainder, numbers, memo)
 
-        if memo[target] is not None:
-            memo[target].append(number)
+        if result is not None:
+            memo[target] = result + [number]
 
             if shortest is None or len(shortest) > len(memo[target]):
                 shortest = memo[target]
@@ -130,8 +130,36 @@ def race(target, numbers):
     print()
 
 
+def manual_test():
+    """
+    Manually exercise test code for debugging
+    """
+    scenerios = [
+        {
+            'target': 100,
+            'numbers': [7, 14],
+            'assert': None
+        },
+        {
+            'target': 100,
+            'numbers': [25, 10],
+            'assert': True
+        }
+    ]
+
+    for scenerio in scenerios:
+        print(
+            "can_sum_memo({}, {}) -> ".format(
+                scenerio['target'],
+                scenerio['numbers']
+            ),
+            best_sum_memo(scenerio['target'], scenerio['numbers'])
+        )
+
+
 if __name__ == "__main__":
     """
-    riggers race when running from command line
+    test code when triggered from the command line.
     """
-    race(100, [25, 3, 12, 4])
+
+    manual_test()
