@@ -1,6 +1,8 @@
 """
 This file contains unit tests for the examples in the dynamic programming
 folder.
+
+It only tests the memoized functions because of time.
 """
 import unittest
 from memoization_best_sum import best_sum_memo
