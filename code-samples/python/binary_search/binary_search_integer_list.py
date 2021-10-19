@@ -8,7 +8,7 @@ returns the index of a given value in a sorted list.
 
 """
 import time
-import sys
+
 
 # CONSTANTS
 HAYSTACK = [0, 5, 8, 12, 20, 31, 33, 40, 50, 56, 73, 79, 83, 85, 90, 94, 101,
@@ -21,6 +21,7 @@ HAYSTACK = [0, 5, 8, 12, 20, 31, 33, 40, 50, 56, 73, 79, 83, 85, 90, 94, 101,
             478, 478, 488, 493, 497]
 
 NEEDLE = 292
+
 
 def IndexOfIterative(haystack, needle):
     """
@@ -44,7 +45,7 @@ def IndexOfIterative(haystack, needle):
     return None
 
 
-def indexOfRecursive(haystack, needle, left = 0, right = None):
+def indexOfRecursive(haystack, needle, left=0, right=None):
     """
     """
     if not right:
@@ -84,7 +85,6 @@ def race(haystack, needle):
     end = time.time()
     print("run time: {}".format(end - start))
 
-
     print()
     print()
 
@@ -104,6 +104,7 @@ def race(haystack, needle):
     print("run time: {}".format(end - start))
     print()
     print()
+
 
 if __name__ == "__main__":
     """
