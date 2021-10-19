@@ -36,9 +36,9 @@ def can_sum_rec(target, numbers):
         remainder = target - number
 
         if can_sum_rec(remainder, numbers) is True:
-            return True
+            return(True)
 
-    return False
+    return(False)
 
 
 def can_sum_memo(target, numbers, memo={}):
@@ -56,11 +56,11 @@ def can_sum_memo(target, numbers, memo={}):
 
     for number in numbers:
         remainder = target - number
-        memo[target] = can_sum_memo(remainder, numbers, memo)
+        memo[remainder] = can_sum_memo(remainder, numbers, memo)
 
-        return memo[target]
+        return(memo[remainder])
 
-    return False
+    return(False)
 
 
 def race(target, numbers):
@@ -103,11 +103,35 @@ def race(target, numbers):
     print()
 
 
+def manual_test():
+    """
+    """
+    scenerios = [
+        {
+            'target': 100,
+            'numbers': [7, 14],
+            'assert': False
+        },
+        {
+            'target': 100,
+            'numbers': [25, 7, 34, 14],
+            'assert': True
+        }
+    ]
+
+    for scenerio in scenerios:
+        print(
+            "can_sum_memo({}, {}) -> ".format(
+                scenerio['target'],
+                scenerio['numbers']
+            ),
+            can_sum_memo(scenerio['target'], scenerio['numbers'])
+        )
+
+
 if __name__ == "__main__":
     """
     test code when triggered from the command line.
     """
-    numbers = [7, 14]
-    target = 250
 
-    race(target, numbers)
+    manual_test()
