@@ -8,6 +8,33 @@ import unittest
 from memoization_best_sum import best_sum_memo
 from memoization_can_construct import can_construct_memo
 from memoization_can_sum import can_sum_memo
+from memoization_fib import fib
+
+
+class TestFib(unittest.TestCase):
+    """
+    tests if results match expected results
+    """
+    scenerios = [
+        {
+            'target': 27,
+            'assert': 196418
+        },
+        {
+            'target': 12,
+            'assert': 144
+        }
+    ]
+
+    def test_fib(self):
+        """
+        test for fib
+        """
+        for scenerio in self.scenerios:
+            self.assertEqual(
+                fib(scenerio['target']),
+                scenerio['assert']
+            )
 
 
 class TestCanSum(unittest.TestCase):
