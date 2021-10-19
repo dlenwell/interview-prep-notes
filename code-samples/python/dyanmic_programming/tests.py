@@ -1,8 +1,6 @@
 """
 This file contains unit tests for the examples in the dynamic programming
 folder.
-
-
 """
 import unittest
 from memoization_best_sum import best_sum_memo
@@ -14,9 +12,7 @@ from memoization_has_sum import has_sum_memo
 
 
 class TestHasSum(unittest.TestCase):
-    """
-    tests if results match expected results
-    """
+
     scenerios = [
         {
             'target': 300,
@@ -42,9 +38,7 @@ class TestHasSum(unittest.TestCase):
 
 
 class TestGridTraveler(unittest.TestCase):
-    """
-    tests if results match expected results
-    """
+
     scenerios = [
         {
             'height': 10,
@@ -70,9 +64,7 @@ class TestGridTraveler(unittest.TestCase):
 
 
 class TestFib(unittest.TestCase):
-    """
-    tests if results match expected results
-    """
+
     scenerios = [
         {
             'target': 27,
@@ -96,9 +88,7 @@ class TestFib(unittest.TestCase):
 
 
 class TestCanSum(unittest.TestCase):
-    """
-    tests if results match expected results
-    """
+
     scenerios = [
         {
             'target': 100,
@@ -124,9 +114,7 @@ class TestCanSum(unittest.TestCase):
 
 
 class TestCanConstruct(unittest.TestCase):
-    """
-    tests if results match expected results
-    """
+
     scenerios = [
         {
             'target': "abcdef",
@@ -163,9 +151,7 @@ class TestCanConstruct(unittest.TestCase):
 
 
 class TestBestSum(unittest.TestCase):
-    """
-    tests if results match expected results
-    """
+
     scenerios = [
         {
             'target': 100,
@@ -190,8 +176,12 @@ class TestBestSum(unittest.TestCase):
             )
 
 
-if __name__ == '__main__':
+def main():
     """
     initiate tests from command line
     """
     unittest.main()
+
+
+if __name__ == '__main__':
+    main()
