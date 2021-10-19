@@ -28,7 +28,7 @@ class TestHasSum(unittest.TestCase):
 
     def test_has_sum(self):
         """
-        test for can construct memoized
+        test for has_sum_memo memoized
         """
         for scenerio in self.scenerios:
             self.assertEqual(
@@ -54,7 +54,7 @@ class TestGridTraveler(unittest.TestCase):
 
     def test_grid_traveler_memo(self):
         """
-        test for fib
+        test for grid_traveler_memo
         """
         for scenerio in self.scenerios:
             self.assertEqual(
@@ -104,7 +104,7 @@ class TestCanSum(unittest.TestCase):
 
     def test_can_sum(self):
         """
-        test for can construct memoized
+        test for can_sum_memo
         """
         for scenerio in self.scenerios:
             self.assertEqual(
@@ -141,7 +141,7 @@ class TestCanConstruct(unittest.TestCase):
 
     def test_can_construct_memo(self):
         """
-        test for can construct memoized
+        test for can_construct_memo
         """
         for scenerio in self.scenerios:
             self.assertEqual(
@@ -167,7 +167,7 @@ class TestBestSum(unittest.TestCase):
 
     def test_best_sum_memo(self):
         """
-        test for best sum WITH memoization
+        test for test_best_sum_memo
         """
         for scenerio in self.scenerios:
             self.assertEqual(
