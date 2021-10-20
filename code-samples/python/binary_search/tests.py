@@ -3,6 +3,59 @@ tests for the binary_search folder
 """
 import unittest
 from binary_search_integer_list import index_of_iterative, index_of_recursive
+from binary_search_tree import Tree
+
+
+class TestBinarySearchTree(unittest.TestCase):
+    """
+    """
+    scenerios = [
+        {
+            'haystack': [0, 5, 8, 12, 20, 31, 33, 40, 50, 56, 73, 79, 83, 85,
+                         94, 101, 108, 115, 118, 153, 159, 160, 161, 172, 175,
+                         198, 198, 198, 200, 207, 209, 213, 216, 228, 232, 235,
+                         247, 252, 252, 258, 262, 262, 267, 267, 270, 274, 274,
+                         282, 287, 292, 303, 310, 314, 318, 329, 332, 337, 342,
+                         345, 345, 350, 354, 359, 361, 365, 365, 369, 387, 389,
+                         395, 400, 407, 410, 412, 414, 414, 415, 415, 417, 423,
+                         430, 431, 433, 434, 445, 449, 450, 453, 455, 457, 460,
+                         466, 467, 472, 478, 478, 488, 493, 497],
+            'needle': 292,
+            'assert': True
+        },
+        {
+            'haystack': [0, 5, 8, 12, 20, 31, 33, 40, 50, 56, 73, 79, 83, 85,
+                         94, 101, 108, 115, 118, 153, 159, 160, 161, 172, 175,
+                         198, 198, 198, 200, 207, 209, 213, 216, 228, 232, 235,
+                         247, 252, 252, 258, 262, 262, 267, 267, 270, 274, 274,
+                         282, 287, 292, 303, 310],
+            'needle': 150,
+            'assert': False
+        }
+    ]
+
+    def generate_tree(self, list):
+        """
+        """
+        tree = Tree()
+
+        # add 100 random values to the tree
+        for value in list:
+            tree.add(value)
+
+        return(tree)
+
+    def test_has_node_with_value(self):
+        """
+        test for has_node_with_value
+        """
+        for scenerio in self.scenerios:
+            tree = self.generate_tree(scenerio['haystack'])
+
+            self.assertEqual(
+                tree.has_node_with_value(scenerio['needle']),
+                scenerio['assert']
+            )
 
 
 class TestBinarySearchIntegerList(unittest.TestCase):
