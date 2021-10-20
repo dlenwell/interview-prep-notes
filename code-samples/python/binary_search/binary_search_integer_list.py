@@ -23,7 +23,7 @@ HAYSTACK = [0, 5, 8, 12, 20, 31, 33, 40, 50, 56, 73, 79, 83, 85, 90, 94, 101,
 NEEDLE = 292
 
 
-def IndexOfIterative(haystack, needle):
+def index_of_iterative(haystack, needle):
     """
     """
     left = 0
@@ -45,7 +45,7 @@ def IndexOfIterative(haystack, needle):
     return(None)
 
 
-def indexOfRecursive(haystack, needle, left=0, right=None):
+def index_of_iterative(haystack, needle, left=0, right=None):
     """
     """
     if not right:
@@ -59,10 +59,10 @@ def indexOfRecursive(haystack, needle, left=0, right=None):
         return(center)
 
     elif needle < haystack[center]:
-        return(indexOfRecursive(haystack, needle, left, (center - 1)))
+        return(index_of_iterative(haystack, needle, left, (center - 1)))
 
     else:
-        return(indexOfRecursive(haystack, needle, (center + 1), right))
+        return(index_of_iterative(haystack, needle, (center + 1), right))
 
     return(None)
 
@@ -71,15 +71,15 @@ def race(haystack, needle):
     """
         race
     """
-    print("running indexOfRecursive with haystack:{} needle:{}   ::"
+    print("running index_of_iterative with haystack:{} needle:{}   ::"
           .format(haystack, needle))
 
     # with memoization
     start = time.time()
     print(
-        "indexOfRecursive({}, {}) -> {}".format(
+        "index_of_iterative({}, {}) -> {}".format(
             haystack, needle,
-            indexOfRecursive(haystack, needle)
+            index_of_iterative(haystack, needle)
         )
     )
     end = time.time()
@@ -89,15 +89,15 @@ def race(haystack, needle):
     print()
 
     # recursion
-    print("running IndexOfIterative with haystack:{} needle:{} ::"
+    print("running index_of_iterative with haystack:{} needle:{} ::"
           .format(haystack, needle))
 
     start = time.time()
     print(
-        "IndexOfIterative({}, {}) -> {}".format(
+        "index_of_iterative({}, {}) -> {}".format(
             haystack,
             needle,
-            IndexOfIterative(haystack, needle)
+            index_of_iterative(haystack, needle)
         )
     )
     end = time.time()
