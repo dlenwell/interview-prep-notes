@@ -34,7 +34,7 @@ def IndexOfIterative(haystack, needle):
         center = (left + right) // 2
 
         if haystack[center] == needle:
-            return center
+            return(center)
 
         elif needle < haystack[center]:
             right = center - 1
@@ -42,7 +42,7 @@ def IndexOfIterative(haystack, needle):
         else:
             left = center + 1
 
-    return None
+    return(None)
 
 
 def indexOfRecursive(haystack, needle, left=0, right=None):
@@ -59,10 +59,10 @@ def indexOfRecursive(haystack, needle, left=0, right=None):
         return(center)
 
     elif needle < haystack[center]:
-        return (indexOfRecursive(haystack, needle, left, (center - 1)))
+        return(indexOfRecursive(haystack, needle, left, (center - 1)))
 
     else:
-        return (indexOfRecursive(haystack, needle, (center + 1), right))
+        return(indexOfRecursive(haystack, needle, (center + 1), right))
 
     return(None)
 
@@ -109,6 +109,5 @@ def race(haystack, needle):
 if __name__ == "__main__":
     """
     do the things
-
     """
     race(HAYSTACK, NEEDLE)
