@@ -34,7 +34,7 @@ def index_of_iterative(haystack, needle):
         center = (left + right) // 2
 
         if haystack[center] == needle:
-            return(center)
+            return (center)
 
         elif needle < haystack[center]:
             right = center - 1
@@ -45,7 +45,7 @@ def index_of_iterative(haystack, needle):
     return(None)
 
 
-def index_of_iterative(haystack, needle, left=0, right=None):
+def index_of_recursive(haystack, needle, left=0, right=None):
     """
     """
     if not right:
@@ -59,10 +59,10 @@ def index_of_iterative(haystack, needle, left=0, right=None):
         return(center)
 
     elif needle < haystack[center]:
-        return(index_of_iterative(haystack, needle, left, (center - 1)))
+        return(index_of_recursive(haystack, needle, left, (center - 1)))
 
     else:
-        return(index_of_iterative(haystack, needle, (center + 1), right))
+        return(index_of_recursive(haystack, needle, (center + 1), right))
 
     return(None)
 
@@ -71,15 +71,15 @@ def race(haystack, needle):
     """
         race
     """
-    print("running index_of_iterative with haystack:{} needle:{}   ::"
+    print("running index_of_recursive with haystack:{} needle:{}   ::"
           .format(haystack, needle))
 
     # with memoization
     start = time.time()
     print(
-        "index_of_iterative({}, {}) -> {}".format(
+        "index_of_recursive({}, {}) -> {}".format(
             haystack, needle,
-            index_of_iterative(haystack, needle)
+            index_of_recursive(haystack, needle)
         )
     )
     end = time.time()
