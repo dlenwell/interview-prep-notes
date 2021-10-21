@@ -3,7 +3,31 @@ tests for sliding window examples
 """
 from unittest import main, TestCase
 from sliding_window import max_sum, shortest_larger_than
-from strings import min_sub_string, longest_sub_string
+from strings import min_sub_string, longest_sub_string, longest_consecutive
+
+
+class TestLongestConsecutive(TestCase):
+
+    scenerios = [
+        {
+            'data': "ABBCCCDDDDEEEEFFFFFFF",
+            'assert': 7
+        },
+        {
+            'data': "ABBCCCDDDDEEEEEFF",
+            'assert': 5
+        },
+    ]
+
+    def test_longest_consecutive(self):
+        """
+        test for longest_consecutive
+        """
+        for scenerio in self.scenerios:
+            self.assertEqual(
+                longest_consecutive(scenerio['data']),
+                scenerio['assert']
+            )
 
 
 class TestLongestSubString(TestCase):
