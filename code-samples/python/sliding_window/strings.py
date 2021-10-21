@@ -3,6 +3,26 @@ sliding window example
 """
 
 
+def longest_consecutive(data):
+    """
+    returns the length of the longest consecutive string
+    """
+    count = 0
+    longest = 0
+    pointer = None
+
+    for character in data:
+        if character == pointer:
+            count += 1
+        else:
+            count = 1
+            pointer = character
+
+        longest = max(count, longest)
+
+    return(longest)
+
+
 def longest_sub_string(data):
     """
     returns the length of the longest unuiqe substring
@@ -13,6 +33,8 @@ def longest_sub_string(data):
     # pointers
     pointer_1 = 0
     pointer_2 = 0
+
+    # cache
     longest = 0
     pocket = []
 
@@ -92,6 +114,9 @@ def main():
 
     print("longest_sub_string('WEWERWERWERWEDJJDMUSHHENREWSDESSEDTEEWSS') -> ",
           longest_sub_string('WEWERWERWERWEDJJDMUSHHENREWSDESSEDTEEWSS'))
+
+    print('longest_consecutive("ABBCCCDDDDEEEEEFF") -> ',
+          longest_consecutive("ABBCCCDDDDEEEEFFFFFFF"))
 
 
 if __name__ == "__main__":
