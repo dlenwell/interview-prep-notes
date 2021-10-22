@@ -1,30 +1,7 @@
 """
-
-graph represented below:
-
-            .---.     .---.
-           /| 0 |-----| 1 |\
-          / '---'   / '---'  \
-    .---./    |    /    |      \ .---.    .---.
-    | 5 |     |   /     |        | 2 |----| 6 |
-    '---'\    |  /      |      / '---'    '---'
-          \ .---.     .---.  /
-           \| 4 |-----| 3 |/
-            '---'     '---'
-
+collection of graph traversal examples
 """
 from collections import deque
-
-
-graph = {
-    0: [1, 4, 5],
-    1: [0, 2, 3, 4],
-    2: [1, 3, 6],
-    3: [1, 2, 4],
-    4: [0, 1, 3, 5],
-    5: [0, 4],
-    6: [2],
-}
 
 
 def all_paths_bfs(graph, start, finish):
@@ -47,7 +24,7 @@ def all_paths_bfs(graph, start, finish):
             visited.add(node)
 
         for neighbor in graph[node]:
-            if not neighbor in visited:
+            if neighbor not in visited:
                 queue.append(path + [neighbor])
 
     return paths
@@ -77,7 +54,7 @@ def shortest_path_finder_bfs(graph, start, finish):
             visited.add(node)
 
         for neighbor in graph[node]:
-            if not neighbor in visited:
+            if neighbor not in visited:
                 queue.append(path + [neighbor])
 
     return shortest
@@ -103,7 +80,7 @@ def path_finder_bfs(graph, start, finish):
             visited.add(node)
 
         for neighbor in graph[node]:
-            if not neighbor in visited:
+            if neighbor not in visited:
                 queue.append(path + [neighbor])
 
     return None
@@ -141,7 +118,7 @@ def dfs_traverse(graph, start):
 
     while stack:
         node = stack.pop()
-        if not node in visited:
+        if node not in visited:
             # do it
             print('Visiting: ', node)
 
@@ -170,11 +147,21 @@ def bfs_traverse(graph, start):
             visited.add(node)
 
         for neighbor in graph[node]:
-            if not neighbor in visited:
+            if neighbor not in visited:
                 queue.append(neighbor)
 
     return visited
 
+
+graph = {
+    0: [1, 4, 5],
+    1: [0, 2, 3, 4],
+    2: [1, 3, 6],
+    3: [1, 2, 4],
+    4: [0, 1, 3, 5],
+    5: [0, 4],
+    6: [2],
+}
 
 if __name__ == "__main__":
     """
