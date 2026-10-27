@@ -19,5 +19,8 @@ goes to 11) concepts that will come up in these types of interviews, they are;
 - [Dynamic Programming](code-samples/python/dyanmic_programming)
 - [Quick Sort](code-samples/python/quick_sort)
 
+You will find leetcode specific problems ([here](code-samples/python/leetcode)).
+
 I've also included a directory
 ([here](code-samples/python/samples-from-actual-interviews)) of code snippets from actual coding interviews.
+
