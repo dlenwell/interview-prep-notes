@@ -12,6 +12,10 @@ scenarios_dup = [
         'assert': [["eat", "tea", "eat", "ate"],["dog", "god"]]
     },
     {
+        'data': ["eat", "tea", "ate", "tea"],
+        'assert': [["eat", "tea", "ate", "tea"]]
+    },
+    {
         'data': [""],
         'assert': [[""]]
     },
@@ -30,6 +34,10 @@ scenarios_no_dup = [
     {
         'data': ["eat", "tea", "eat", "ate", "dog", "god"],
         'assert': [["eat", "tea", "ate"],["dog", "god"]]
+    },
+    {
+        'data': ["eat", "tea", "tea"],
+        'assert': [["eat", "tea"]]
     },
     {
         'data': [""],

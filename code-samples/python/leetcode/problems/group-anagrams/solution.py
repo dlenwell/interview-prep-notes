@@ -11,31 +11,35 @@ from inputs import normalize, scenarios_dup, scenarios_no_dup
 
 class Solution:
     def groupAnagramsCounter_nodup(self, words: list[str]) -> list[list[str]]:
-            """
-            groupAnagramsCounter_nodup
+        """
+        groupAnagramsCounter_nodup
 
-            does not preserve duplicate words.
+        does not preserve duplicate words.
 
-            Parameters:
-            words (string): input list of words
-            
-            Returns:
-            list: groupped anagrams in lists 
-            """
-            grouped = []
-            
-            for word in words:
-                # first is the word already in a grouped list?
-                if not any(word in sublist for sublist in grouped):
-                    word_anagrams = [word,]
-                    rest_of_words = words.copy()
-                    rest_of_words.remove(word)
-                    for rest in rest_of_words:
-                        if word != rest and Counter(rest) == Counter(word):
-                            word_anagrams.append(rest)
-                    grouped.append(word_anagrams)
-    
-            return grouped
+        Parameters:
+        words (string): input list of words
+        
+        Returns:
+        list: groupped anagrams in lists 
+        """
+        grouped = []
+        added_words = set()
+        
+        for word in words:
+            # first is the word already in a grouped list?
+            if word not in added_words: # if not, we can test it to see if the following words match
+                added_words.add(word)
+                word_anagrams = [word,]
+                rest_of_words = words.copy()
+                rest_of_words.remove(word)
+                for rest in rest_of_words:
+                    if rest not in added_words and Counter(word) == Counter(rest):
+                        added_words.add(rest)
+                        word_anagrams.append(rest)
+                         
+                grouped.append(word_anagrams)
+             
+        return grouped
     
     def groupAnagramsCounter_preservedup(self, words: list[str]) -> list[list[str]]:
         """
@@ -66,7 +70,7 @@ class Solution:
 
     def groupAnagramsSorted(self, words: list[str]) -> list[list[str]]:
         """
-        groupAnagramsCounter_nodup
+        groupAnagramsSorted
 
         does preserve duplicate words. And uses sorted function rather than Counter to avoid imports.
 
@@ -77,16 +81,20 @@ class Solution:
         list: groupped anagrams in lists 
         """
         grouped = []
+        added_words = set()
 
         for word in words:
             # first is the word already in a grouped list?
-            if not any(word in sublist for sublist in grouped): # if not, we can test it to see if the following words match
+            if word not in added_words: # if not, we can test it to see if the following words match
+                added_words.add(word)
                 word_anagrams = [word,]
                 rest_of_words = words.copy()
                 rest_of_words.remove(word)
                 for rest in rest_of_words:
-                    if word != rest and sorted(word) == sorted(rest):
+                    if rest not in added_words and sorted(word) == sorted(rest):
+                        added_words.add(rest)
                         word_anagrams.append(rest)
+                        
                 grouped.append(word_anagrams)
             
         return grouped
@@ -143,7 +151,7 @@ def main():
         
         print("input: ", scenario_nodup["data"])
         print("expected result:", scenario_nodup["assert"])
-        thisactual = solution.groupAnagramsCounter_nodup(scenario_nodup["data"])
+        thisactual = solution.groupAnagramsSorted(scenario_nodup["data"])
         print("result: ", thisactual)
         if normalize(scenario_nodup["assert"]) == normalize(thisactual):
             print("PASSED!")
