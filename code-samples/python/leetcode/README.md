@@ -1,6 +1,7 @@
 #problems:
 
 - [Word Pattern](problems/word-pattern/)
+- [Group Anagrams](problems/group-anagrams/)
 
 #tester:
 
