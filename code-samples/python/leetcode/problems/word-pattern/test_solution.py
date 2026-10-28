@@ -1,5 +1,5 @@
 """
-tests for sliding window examples
+tests
 """
 from unittest import TestCase
 from solution import Solution
