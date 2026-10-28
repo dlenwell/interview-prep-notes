@@ -10,6 +10,30 @@ from inputs import normalize, scenarios_dup, scenarios_no_dup
 
 
 class Solution:
+    def groupAnagramsOptimized(self, words: list[str]) -> list[list[str]]:
+        """
+        groupAnagramsOptimized
+
+        does preserve duplicate words.
+
+        Parameters:
+        words (string): input list of words
+        
+        Returns:
+        list: groupped anagrams in lists 
+        """
+        mapped_dict = {}
+
+        for word in words:
+            sword = ''.join(sorted(word))
+
+            if sword not in mapped_dict: 
+                mapped_dict[sword] = []
+
+            mapped_dict[sword].append(word)
+
+        return list(mapped_dict.values())
+    
     def groupAnagramsCounter_nodup(self, words: list[str]) -> list[list[str]]:
         """
         groupAnagramsCounter_nodup
@@ -105,6 +129,29 @@ def main():
     """
     solution = Solution()
 
+    
+
+    print()
+    print("===================================")
+    print()
+    print("Running optimized version:")
+    
+    for scenario1 in scenarios_dup:
+            
+        print("input: ", scenario1["data"])
+        print("expected result:", scenario1["assert"])
+        actual = solution.groupAnagramsOptimized(scenario1["data"])
+        print("result: ", actual)
+        if normalize(scenario1["assert"]) == normalize(actual):
+            print("PASSED!")
+        else:
+            print("FAILED!")
+    
+        print()
+        print("===================================")
+
+
+    
     print()
     print("===================================")
     print()

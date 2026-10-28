@@ -49,9 +49,24 @@ class TestGroupAnagrams(TestCase):
             with self.subTest(
                 data=scenario["data"]
             ):
+                actual = self.solution.groupAnagramsSorted(scenario["data"])
+                self.assertIsInstance(actual, list)
                 self.assertEqual(
-                    normalize(self.solution.groupAnagramsSorted(
-                        scenario["data"]
-                    )),
+                    normalize(actual),
                     normalize(scenario["assert"])
                 )
+
+    def test_group_anagrams_optimized(self):
+            """
+            testing 
+            """
+            for scenario in scenarios_dup:
+                with self.subTest(
+                    data=scenario["data"]
+                ):
+                    actual = self.solution.groupAnagramsOptimized(scenario["data"])
+                    self.assertIsInstance(actual, list)
+                    self.assertEqual(
+                        normalize(actual),
+                        normalize(scenario["assert"])
+                    )
