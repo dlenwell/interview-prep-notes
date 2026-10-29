@@ -3,6 +3,7 @@
 - [Word Pattern](problems/word-pattern/)
 - [Group Anagrams](problems/group-anagrams/)
 - [Top K Fequent Elements](problems/top-k-frequent-elements/)
+- [Number of Islands](problems/number-of-islands/)
 
 # Tester:
 
